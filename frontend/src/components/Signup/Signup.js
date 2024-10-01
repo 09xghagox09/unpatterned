@@ -9,7 +9,7 @@ function Signup() {
     confirmPassword: ''
   });
 
-  const navigate = useNavigate(); // For redirecting after successful signup
+  const navigate = useNavigate(); 
 
   // Update state when form fields change
   const handleChange = (e) => {
@@ -28,14 +28,14 @@ function Signup() {
       return;
     }
 
-    // Make POST request to backend for signup
+    // function to conect backend to send to sql 
     axios.post('http://localhost:8081/Signup', {
       email: values.email,
       password: values.password
     })
     .then((res) => {
       alert("Registration successful!");
-      navigate('/'); // Redirect to login page after successful registration
+      navigate('/'); 
     })
     .catch((err) => {
       console.error(err);
